@@ -1,0 +1,4 @@
+
+export const ADD_NEW_FRIEND = 'ADD_NEW_FRIEND'
+export const CANCEL_NEW_FRIEND = 'CANCEL_NEW_FRIEND'
+export const REMOVE_MY_FRIEND = 'REMOVE_MY_FRIEND'
