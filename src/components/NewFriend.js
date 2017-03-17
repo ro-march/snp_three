@@ -7,8 +7,7 @@ export default class NewFriend extends Component {
 	}
     	
 	render() {
-
-		const { avatar, username } = this.props;
+		const { avatar, name } = this.props;
 
 		const avatarStyle = {
 		  backgroundImage: 'url(' + avatar + ')'
@@ -17,9 +16,9 @@ export default class NewFriend extends Component {
 		return (
 			<div className="new-friend">
 				<div className="avatar" style={avatarStyle}></div>
-				<div className="user-name">{username}</div>
+				<div className="user-name">{name}</div>
 				<div className="add-btn" onClick={::this.onAddHandler}></div>
-				<div className="cancel-btn" ></div>
+				
 			</div>
 		);
 	}

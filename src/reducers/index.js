@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
-import { reducer as formReducer } from 'redux-form'
 
 import requestList from './requestList'
+import friendsList from './friendsList'
+import PopupInfoReducer from './PopupInfoReducer'
+
 
 export default combineReducers ({
-	requestList
+	requestList,
+	friendsList,
+	PopupInfoReducer
 })

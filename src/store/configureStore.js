@@ -7,11 +7,11 @@ import thunk from 'redux-thunk'
 export default function configureStore(initialState) {
 
 	//*** my initialState for localStage ***//
-	//const persistedState = loadState();
+	const persistedState = loadState();
 	
 	const store = createStore(
 		rootReducer,
-		initialState,
+		persistedState,
 		applyMiddleware(thunk)
 	)
 

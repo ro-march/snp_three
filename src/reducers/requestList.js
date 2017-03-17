@@ -4,7 +4,7 @@ import {
 	CANCEL_NEW_FRIEND
 } from '../constants/Events'
 
-const initState = users;
+const initState = users.slice();
 
 export default function requestList(state = initState, action) {
 
@@ -12,11 +12,7 @@ export default function requestList(state = initState, action) {
 
 		case ADD_NEW_FRIEND:
 			let id = action.payload.id;
-			return state.filter(comment => comment.id !== id);
-
-		// case CANCEL_NEW_FRIEND:
-		// 	return [...state, {name: '', count: 1, cost: 0} ]
-
+			return state.filter(item => item.id !== id);
 
 		default:
 			return state;

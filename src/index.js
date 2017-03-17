@@ -10,10 +10,13 @@ require('./style.css')
 const store = configureStore();
 
 //*** sibscribe for localStorage ***//
-// store.subscribe(() => {
-// 	//*** save all ***//
-// 	saveState(store.getState());
-// });
+store.subscribe(() => {
+	//*** save all ***//
+	saveState({
+		friendsList: store.getState().friendsList,
+		requestList: store.getState().requestList
+	});
+});
 
 ReactDOM.render(
 	<Provider store={store}>
