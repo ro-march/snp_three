@@ -3,4 +3,11 @@ export const SHOW_INFO = 'SHOW_INFO'
 export const ADD_NEW_FRIEND = 'ADD_NEW_FRIEND'
 export const CANCEL_NEW_FRIEND = 'CANCEL_NEW_FRIEND'
 export const REMOVE_FRIEND = 'REMOVE_FRIEND'
-export const CHANGE_INFO = 'CHANGE_INFO'
+
+export const CHANGE_POKEMON = 'CHANGE_POKEMON'
+export const CREATE_POKEMON = 'CREATE_POKEMON'
+
+export const SHOW_POPUP = 'SHOW_POPUP'
+export const HIDE_POPUP = 'HIDE_POPUP'
+
+export const POPUP_CREATE_POKEMON = 'POPUP_CREATE_POKEMON'

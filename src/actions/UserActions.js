@@ -4,11 +4,44 @@ import {
 	REMOVE_FRIEND,
 	SHOW_INFO,
 	CLOSE_INFO,
-	CHANGE_INFO
+	CHANGE_POKEMON,
+	CREATE_POKEMON,
+	SHOW_POPUP,
+	HIDE_POPUP
 } from '../constants/Events'
 
 
  //*** ***//
+export function createPokemon(pokemon) {
+	return (dispatch) =>
+	{
+		dispatch({
+			type: CREATE_POKEMON,
+			payload: pokemon
+		})
+	}
+}
+
+export function showPopup( id ) {
+	return (dispatch) =>
+	{
+		dispatch({
+			type: SHOW_POPUP,
+			payload: id
+		})
+	}
+}
+
+export function hidePopup( id ) {
+	return (dispatch) =>
+	{
+		dispatch({
+			type: HIDE_POPUP,
+			payload: id
+		})
+	}
+}
+
 export function addNewFriend(friend) {
 	return (dispatch) =>
 	{
@@ -40,12 +73,12 @@ export function cancelNewFriend(friend) {
 }
 
  //*** ***//
-export function changeInfo(id, info) {
+export function changePokemon(pokemon) {
 	return (dispatch) =>
 	{
 		dispatch({
-			type: CHANGE_INFO,
-			payload: {id: id, info: info}
+			type: CHANGE_POKEMON,
+			payload: pokemon
 		})
 	}
 }
