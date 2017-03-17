@@ -78,6 +78,8 @@ html, body, #root {
 	background-color: #608caf;
 	animation-name: show;
 	animation-duration: 0.3s;
+	box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.1);
+
 
 	.avatar {
 		display: flex;

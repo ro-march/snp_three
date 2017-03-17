@@ -121,6 +121,7 @@ html, body, #root {
 	        animation-name: show;
 	-webkit-animation-duration: 0.3s;
 	        animation-duration: 0.3s;
+	box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.1);
 }
 
 .my-friend .avatar {
