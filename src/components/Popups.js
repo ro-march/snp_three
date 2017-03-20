@@ -1,10 +1,10 @@
 import React, { PropTypes, Component } from 'react';
 import CreatePokemonPopup from './popups/CreatePokemonPopup'
-import InfoPokemonPopup from './popups/InfoPokemonPopup'
 
 
 export default class Popups extends Component {
 
+	
 	static contextTypes = {
 		actions: PropTypes.object.isRequired,
 		popups: PropTypes.array.isRequired,

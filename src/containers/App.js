@@ -1,33 +1,23 @@
 import React, { PropTypes, Component } from 'react'
 import { bindActionCreators } from 'redux'
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-import NewPokemonsList from '../components/lists/NewPokemonsList'
-import MyPokemonsList from '../components/lists/MyPokemonsList'
-import Popups from '../components/Popups'
 import * as userActions from '../actions/UserActions'
 import * as popups from '../reducers/popups'
 import {POPUP_CREATE_POKEMON, POPUP_INFO_POKEMON} from '../constants/Events'
-import CreatePokemonPopup from '../components/popups/CreatePokemonPopup'
-import InfoPokemonPopup from '../components/popups/InfoPokemonPopup'
-import { BrowserRouter as Router, Link, Route } from 'react-router-dom'
 
-const ViewPokemon = ({ match }) => {
-	return (
-	<div className="friends-list">
-		<div className="bar">
-			<input className="search"/>
-		</div>
-		<div className="scroll">{match.params.gistId}</div>
-	</div>
-	)
-}
+import CreatePokemonPopup from '../components/popups/CreatePokemonPopup'
+import NewPokemonsList from '../components/lists/NewPokemonsList'
+import MyPokemonsList from '../components/lists/MyPokemonsList'
+import ViewPokemon from '../components/elements/ViewPokemon'
+import Popups from '../components/Popups'
+
 
 export class App extends Component {
 
 
 	componentWillMount() {
 		popups.regPopup(POPUP_CREATE_POKEMON, CreatePokemonPopup);
-		popups.regPopup(POPUP_INFO_POKEMON, InfoPokemonPopup);
 	}
 
 
@@ -36,8 +26,10 @@ export class App extends Component {
 		<Router>
 			<div className="container">
 				<NewPokemonsList />
-				<Route path="/" component={MyPokemonsList} />
-				<Route path="/search=:gistId" component={ViewPokemon} />
+				<Switch>
+					<Route exact path="/" component={MyPokemonsList} />
+					<Route path="/items/:routeId" component={ViewPokemon} />
+				</Switch>
 				<Popups />
 			</div>
 		</Router>

@@ -1,5 +1,5 @@
 import {
-	ADD_NEW_FRIEND,
+	ADD_POKEMON,
 	CHANGE_POKEMON,
 	REMOVE_POKEMON,
 	CREATE_POKEMON,
@@ -12,7 +12,7 @@ export function new_pokemons(state = [], action) {
 
 	switch( action.type ) {
 
-		case ADD_NEW_FRIEND:
+		case ADD_POKEMON:
 			let id = action.payload.id;
 			return state.filter(item => item.id !== id);
 
@@ -29,7 +29,7 @@ export function my_pokemons(state = [], action) {
 
 	switch( action.type ) {
 
-		case ADD_NEW_FRIEND:
+		case ADD_POKEMON:
 			return [...state, action.payload];
 
 		case REMOVE_POKEMON:

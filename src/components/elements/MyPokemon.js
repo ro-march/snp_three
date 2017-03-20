@@ -1,24 +1,24 @@
 import React, { PropTypes, Component } from 'react';
 import { POPUP_INFO_POKEMON } from '../../constants/Events'
 
+
 export default class MyPokemon extends Component {
 
-	//** injection **//
+	
 	static contextTypes = {
 		actions: PropTypes.object.isRequired,
 	}
 
 
 	onClickAvatar() {
-		//context.router.push('/my-new-location')
-		//this.context.actions.showPopup(POPUP_INFO_POKEMON, this.props.pokemon);
+		this.props.history.push('/items/'+this.props.id);
 	}
 
 
 	onRemoveHandler() {
 		this.context.actions.removePokemon(this.props.pokemon);
 	}
-
+	
 
 	render() {
 

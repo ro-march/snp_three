@@ -129,9 +129,44 @@ html, body, #root {
 
 .search {
 	height: 30px;
-	width: 200px;
+	width: 300px;
 	border: none;
 	border-radius: 5px;
+	padding-left: 10px;
+}
+
+.view-pokemon {
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	background-color: #6999bf;
+	overflow: hidden;
+	flex-direction: column;
+	font-size: 24px;
+
+	.avatar {
+		@mixin big-avatar-popup;
+		margin: 0;
+	}
+
+	.name {
+		@mixin base-name;
+	}
+
+	.info {
+		@mixin base-area;
+	}
+
+	.back-btn {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		@mixin base-close-button;
+	}
 }
 
 
@@ -268,6 +303,18 @@ html, body, #root {
 		height: 80px;
 		flex-shrink: 0;
 		background-color: #5880a0;
+	}
+
+	.title-no-pokemons {
+		display: flex;
+		font-family: 'Open Sans', sans-serif;
+		width: 100%;
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+		color: #c9c9c9;
+		text-transform: uppercase;
+		font-size: 24px;
 	}
 }
 

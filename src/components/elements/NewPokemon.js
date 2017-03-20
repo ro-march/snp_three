@@ -8,12 +8,14 @@ export default class NewPokemon extends Component {
 		actions: PropTypes.object.isRequired
 	}
 
+
 	onAddHandler () {
-		this.context.actions.addNewFriend(this.props.friend);
+		this.context.actions.addPokemon(this.props.pokemon);
 	}
 
+
 	render() {
-		const { avatar, name } = this.props.friend;
+		const { avatar, name } = this.props.pokemon;
 
 		const avatarStyle = {
 		  backgroundImage: 'url(' + avatar + ')'

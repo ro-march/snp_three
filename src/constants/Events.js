@@ -1,8 +1,7 @@
 export const CLOSE_INFO = 'CLOSE_INFO'
 export const SHOW_INFO = 'SHOW_INFO'
-export const ADD_NEW_FRIEND = 'ADD_NEW_FRIEND'
-export const CANCEL_NEW_FRIEND = 'CANCEL_NEW_FRIEND'
 
+export const ADD_POKEMON = 'ADD_POKEMON'
 export const REMOVE_POKEMON = 'REMOVE_POKEMON'
 export const CHANGE_POKEMON = 'CHANGE_POKEMON'
 export const CREATE_POKEMON = 'CREATE_POKEMON'
