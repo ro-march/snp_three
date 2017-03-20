@@ -1,39 +1,43 @@
 import {
 	SHOW_POPUP,
 	HIDE_POPUP,
-	POPUP_CREATE_POKEMON
+	POPUP_CREATE_POKEMON,
+	POPUP_INFO_POKEMON,
 } from '../constants/Events'
 
-const initState = {
-	popupCreatePokemon: { show: false },
-	popupInfoPokemon: { show: false }
+
+const regPopups = [];
+
+
+// registry popup
+export function regPopup(name, component) {
+	regPopups.push( {name: name, isShow: false, arg: null, component: component} )
 }
 
-export default function popups(state = initState, action) {
 
+// change popup
+function changePopup(state, name, isShow, arg) {
+		for (let i = 0; i < state.length; i++)
+			if (state[i].name == name)
+				state[i] = {name: name, isShow: isShow, arg: arg, component: state[i].component};
+}
+
+
+// reducer
+export default function popups(state = regPopups, action) {
 	switch( action.type ) {
 
-		//*** show popups ***//
-		case SHOW_POPUP:
-			switch (action.payload) {
-				//******//
-				case POPUP_CREATE_POKEMON:
-					state.popupCreatePokemon.show = true;
-			}
-			return {...state};
+		//
+		case 'SHOW_POPUP':
+			changePopup(state, action.payload.name, true, action.payload.arg);
+			return [...state]
 
-		
+		//
+		case 'HIDE_POPUP':
+			changePopup(state, action.payload.name, false, action.payload.arg);
+			return [...state]
 
-		//*** hide popups ***//
-		case HIDE_POPUP:
-			switch (action.payload) {
-
-				//******//
-				case POPUP_CREATE_POKEMON:
-					state.popupCreatePokemon.show = false;
-			}
-			return {...state};
-
+		//
 		default:
 			return state;
 	}

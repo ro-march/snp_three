@@ -16,6 +16,7 @@ html, body, #root {
 	height: 100%;
 }
 
+
 .popup-container {
 	position: absolute;
 	display: -webkit-box;
@@ -31,6 +32,48 @@ html, body, #root {
 	height: 100%;
 	background-color: rgba(0,0,0, 0.8);
 }
+
+.bar {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.search {
+	height: 30px;
+	width: 200px;
+	border: none;
+	border-radius: 5px;
+}
+
+
+.info-pokemon-popup {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	position: absolute;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	z-index: 2;
+	width: 800px;
+	height: 500px;
+	border-radius: 10px;
+	background-color: white;
+	background-color: #5880a0;
+	-webkit-animation-name: show;
+	        animation-name: show;
+	-webkit-animation-duration: 0.4s;
+	        animation-duration: 0.4s;
+}
+
 
 .create-pokemon-popup {
 	display: -webkit-box;
@@ -56,6 +99,7 @@ html, body, #root {
 	        animation-duration: 0.4s;
 }
 
+
 .create-pokemon-popup .avatar {
 	margin-top: -100px;
 	-ms-flex-negative: 0;
@@ -70,6 +114,7 @@ html, body, #root {
 	cursor: pointer;
 }
 
+
 .create-pokemon-popup .name {
 	margin-top: 15px;
 	width: 95%;
@@ -79,28 +124,34 @@ html, body, #root {
 	background-color: transparent;
 	border: none;
 	text-align: center;
-	color: white
+	color: white;
 }
+
 
 .create-pokemon-popup .name:focus {
 	outline: none;
 }
 
+
 .create-pokemon-popup .name::-webkit-input-placeholder {
 	color: rgba(255,255,255,0.3);
 }
+
 
 .create-pokemon-popup .name::-moz-placeholder {
 	color: rgba(255,255,255,0.3);
 }
 
+
 .create-pokemon-popup .name:-ms-input-placeholder {
 	color: rgba(255,255,255,0.3);
 }
 
+
 .create-pokemon-popup .name::placeholder {
 	color: rgba(255,255,255,0.3);
 }
+
 
 .create-pokemon-popup .add-btn {
 	height: 60px;
@@ -113,9 +164,11 @@ html, body, #root {
 	cursor: pointer
 }
 
+
 .create-pokemon-popup .add-btn:hover {
 	opacity: 1;
 }
+
 
 .create-pokemon-popup .info-field {
 	width: 95%;
@@ -128,28 +181,34 @@ html, body, #root {
 	background-color: transparent;
 	color: white;
 	border: none;
-	text-align: center
+	text-align: center;
 }
+
 
 .create-pokemon-popup .info-field:focus {
 	outline: none;
 }
 
+
 .create-pokemon-popup .info-field::-webkit-input-placeholder {
 	color: rgba(255,255,255,0.3);
 }
+
 
 .create-pokemon-popup .info-field::-moz-placeholder {
 	color: rgba(255,255,255,0.3);
 }
 
+
 .create-pokemon-popup .info-field:-ms-input-placeholder {
 	color: rgba(255,255,255,0.3);
 }
 
+
 .create-pokemon-popup .info-field::placeholder {
 	color: rgba(255,255,255,0.3);
 }
+
 
 .avatar {
 	display: -webkit-box;
@@ -164,7 +223,15 @@ html, body, #root {
 	background-size: 70%;
 }
 
+
 .close-btn {
+	width: 40px;
+	height: 40px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhAxAQKQfAcebwAAAEo0lEQVR42u2dO1PjMBRGP7uAIabf7ZmhNh0Fry0Jm59Fxc+BhIpXsj1umaFftufRwHxbJAubhx3Jlq4iybdkhtx7DomDdS3dBIrBDD3kyJGDKFDgHufJm+pv2w1uoIcd5MiRoECBAufJi9kUe3zkbDxw1zU6AHCXD3O1PXLPXIJ1nvGDi+Kdp1xzCr/GU74vrO2DZ1w3kWKTI1bFFTvO8Du8qqxtxE3b+CR57UYBO7xeWlszBUr4jhQo4TdToIzvQIEyfn0FWvjCCrTw6ynQxhdUoI2vr6AWPkne2FfADm9q1aauoDa+gILa+OoKGuFbVtAIX01BY3yLChrjL1dgBN+SAiP41QqM4VtQYAy/XIFRfJK8ZWYMP+Ot0drmFRjHN6jAOP68Aq5bwDekwAr+WMHXzTLPrKQwoMAaPkme/UuyV7Lc4VyBVXzyg3vjJI/NX8uGAsv4JPnILEUPW00/p0viEAN9BcwwwKHlyrbQS5FbTgIAB7oKmGGAA4HKchkBmgrE8IE84RO+iaQChuiqrNYL4gN/UlAoleK7QBQfYIpCLBlwgMtqBcxwKYgPFLICgP0qBcxwiX3ReooU96IJxwoW3pByUxwfuAc3FnTWbMdwXgE3ORSv44EbALhb0l0TVOAE//2zuctT8eRTCpzgk6df/teWNBntxOSe3MpaxPK4mupr12o2GFHgCP+ziZN8KcAFfghfg4FfAMw9yqAaN/iZvM4IcKZAPv7DnxIQiYIp/BkBESiYwZ8TALCDPo5c12kpbnEyjb9AQMAKFuAvFBCogoX4JQICVFCCXyogMAWl+BUCAlJQgV8pAGBHYGnadtyhW44PpFW/m7ziBHeuCRrin1ThL3kHAAAz9L19F9zhZNk69FIBHitQwFcS4KkCJXxFAR4qUMRXFiDesGgWij0oLQEeKdDA1xLgiQItfE0BHijQxNcWsOIKtPFrCHDSwVOLEY71N8vVELCiCmrh1w5mTno55TE091yqqgI37awy/Kbb47xW4AZ/ZRS4w58ocNHZ+4rme0O9VuAe36kCI/hp85eIPCL/CER+EYz8a3Al8N0pWBl8NwrCuRmK/nY4+gUR7X+EmGGwkvjAfp29Se2iaFD4NRS0jZHg8DUVKF4EmaHvDT5wgL7q5bBtjweKr6ygfUQmYHwlBe1jcpX4fv/1x3GIftWJNu2jshHgVypoH5ePBL9UQfRbZma+BdjBRbD4wBEuZr8R2m1zkeHPKYh+6+wnfqybp8f4sW+fj/wAhciP0Ij9EJUUPWwLX4NH6CbPsz9MntHFSLiSbfRS7IjjH8/jTxQciyvYkTpN7n/80iWq5EVcQZ7wN76LpVNoWAg3YJ7Sek8I2MIHkhd0MRSrKZE7TE25XSWqQOw0Ob2GpZwCIQH6XXspBUX0x+oi+oOVgeiP1m4PV0f0x+tbUeDXgAXjCvwbsWFUgZ9DVowp8HfMjhEFfg9aaqzA/1FbjRSEMWyttoJwxu3VUhDWwEVtBeGN3NRSEObQVWUF4Y7dVVIQ9uBlIPrR25NEwQ5f19kx0kOOHDmIAgXucZ68uYaf1LaBHnaQI0eCAgUKnKsuwv4F4ZPefSOIgyQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMTZUMTY6NDE6MDcrMDE6MDB3Kzp9AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTE2VDE2OjQxOjA3KzAxOjAwBnaCwQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -172,14 +239,8 @@ html, body, #root {
 	margin-top: 5px;
 	width: 40px;
 	height: 40px;
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhAxAQKQfAcebwAAAEo0lEQVR42u2dO1PjMBRGP7uAIabf7ZmhNh0Fry0Jm59Fxc+BhIpXsj1umaFftufRwHxbJAubhx3Jlq4iybdkhtx7DomDdS3dBIrBDD3kyJGDKFDgHufJm+pv2w1uoIcd5MiRoECBAufJi9kUe3zkbDxw1zU6AHCXD3O1PXLPXIJ1nvGDi+Kdp1xzCr/GU74vrO2DZ1w3kWKTI1bFFTvO8Du8qqxtxE3b+CR57UYBO7xeWlszBUr4jhQo4TdToIzvQIEyfn0FWvjCCrTw6ynQxhdUoI2vr6AWPkne2FfADm9q1aauoDa+gILa+OoKGuFbVtAIX01BY3yLChrjL1dgBN+SAiP41QqM4VtQYAy/XIFRfJK8ZWYMP+Ot0drmFRjHN6jAOP68Aq5bwDekwAr+WMHXzTLPrKQwoMAaPkme/UuyV7Lc4VyBVXzyg3vjJI/NX8uGAsv4JPnILEUPW00/p0viEAN9BcwwwKHlyrbQS5FbTgIAB7oKmGGAA4HKchkBmgrE8IE84RO+iaQChuiqrNYL4gN/UlAoleK7QBQfYIpCLBlwgMtqBcxwKYgPFLICgP0qBcxwiX3ReooU96IJxwoW3pByUxwfuAc3FnTWbMdwXgE3ORSv44EbALhb0l0TVOAE//2zuctT8eRTCpzgk6df/teWNBntxOSe3MpaxPK4mupr12o2GFHgCP+ziZN8KcAFfghfg4FfAMw9yqAaN/iZvM4IcKZAPv7DnxIQiYIp/BkBESiYwZ8TALCDPo5c12kpbnEyjb9AQMAKFuAvFBCogoX4JQICVFCCXyogMAWl+BUCAlJQgV8pAGBHYGnadtyhW44PpFW/m7ziBHeuCRrin1ThL3kHAAAz9L19F9zhZNk69FIBHitQwFcS4KkCJXxFAR4qUMRXFiDesGgWij0oLQEeKdDA1xLgiQItfE0BHijQxNcWsOIKtPFrCHDSwVOLEY71N8vVELCiCmrh1w5mTno55TE091yqqgI37awy/Kbb47xW4AZ/ZRS4w58ocNHZ+4rme0O9VuAe36kCI/hp85eIPCL/CER+EYz8a3Al8N0pWBl8NwrCuRmK/nY4+gUR7X+EmGGwkvjAfp29Se2iaFD4NRS0jZHg8DUVKF4EmaHvDT5wgL7q5bBtjweKr6ygfUQmYHwlBe1jcpX4fv/1x3GIftWJNu2jshHgVypoH5ePBL9UQfRbZma+BdjBRbD4wBEuZr8R2m1zkeHPKYh+6+wnfqybp8f4sW+fj/wAhciP0Ij9EJUUPWwLX4NH6CbPsz9MntHFSLiSbfRS7IjjH8/jTxQciyvYkTpN7n/80iWq5EVcQZ7wN76LpVNoWAg3YJ7Sek8I2MIHkhd0MRSrKZE7TE25XSWqQOw0Ob2GpZwCIQH6XXspBUX0x+oi+oOVgeiP1m4PV0f0x+tbUeDXgAXjCvwbsWFUgZ9DVowp8HfMjhEFfg9aaqzA/1FbjRSEMWyttoJwxu3VUhDWwEVtBeGN3NRSEObQVWUF4Y7dVVIQ9uBlIPrR25NEwQ5f19kx0kOOHDmIAgXucZ68uYaf1LaBHnaQI0eCAgUKnKsuwv4F4ZPefSOIgyQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMTZUMTY6NDE6MDcrMDE6MDB3Kzp9AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTE2VDE2OjQxOjA3KzAxOjAwBnaCwQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: 50%;
-	background-color: rgba(0,0,0,0.1);
-	border-radius: 10px;
-	cursor: pointer
 }
+
 
 .close-btn:hover {
 	background-color: rgba(255,255,255,0.1);
@@ -327,11 +388,6 @@ html, body, #root {
 	height: 190px;
 	width: 190px;
 	margin-top: 10px;
-	border-radius: 50%;
-	background-color: rgba(255, 255, 255, 0.3);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 70%;
 	cursor: pointer;
 }
 
@@ -347,19 +403,22 @@ html, body, #root {
 }
 
 .my-friend .remove-btn {
+	width: 40px;
+	height: 40px;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhAxAQKQfAcebwAAAEo0lEQVR42u2dO1PjMBRGP7uAIabf7ZmhNh0Fry0Jm59Fxc+BhIpXsj1umaFftufRwHxbJAubhx3Jlq4iybdkhtx7DomDdS3dBIrBDD3kyJGDKFDgHufJm+pv2w1uoIcd5MiRoECBAufJi9kUe3zkbDxw1zU6AHCXD3O1PXLPXIJ1nvGDi+Kdp1xzCr/GU74vrO2DZ1w3kWKTI1bFFTvO8Du8qqxtxE3b+CR57UYBO7xeWlszBUr4jhQo4TdToIzvQIEyfn0FWvjCCrTw6ynQxhdUoI2vr6AWPkne2FfADm9q1aauoDa+gILa+OoKGuFbVtAIX01BY3yLChrjL1dgBN+SAiP41QqM4VtQYAy/XIFRfJK8ZWYMP+Ot0drmFRjHN6jAOP68Aq5bwDekwAr+WMHXzTLPrKQwoMAaPkme/UuyV7Lc4VyBVXzyg3vjJI/NX8uGAsv4JPnILEUPW00/p0viEAN9BcwwwKHlyrbQS5FbTgIAB7oKmGGAA4HKchkBmgrE8IE84RO+iaQChuiqrNYL4gN/UlAoleK7QBQfYIpCLBlwgMtqBcxwKYgPFLICgP0qBcxwiX3ReooU96IJxwoW3pByUxwfuAc3FnTWbMdwXgE3ORSv44EbALhb0l0TVOAE//2zuctT8eRTCpzgk6df/teWNBntxOSe3MpaxPK4mupr12o2GFHgCP+ziZN8KcAFfghfg4FfAMw9yqAaN/iZvM4IcKZAPv7DnxIQiYIp/BkBESiYwZ8TALCDPo5c12kpbnEyjb9AQMAKFuAvFBCogoX4JQICVFCCXyogMAWl+BUCAlJQgV8pAGBHYGnadtyhW44PpFW/m7ziBHeuCRrin1ThL3kHAAAz9L19F9zhZNk69FIBHitQwFcS4KkCJXxFAR4qUMRXFiDesGgWij0oLQEeKdDA1xLgiQItfE0BHijQxNcWsOIKtPFrCHDSwVOLEY71N8vVELCiCmrh1w5mTno55TE091yqqgI37awy/Kbb47xW4AZ/ZRS4w58ocNHZ+4rme0O9VuAe36kCI/hp85eIPCL/CER+EYz8a3Al8N0pWBl8NwrCuRmK/nY4+gUR7X+EmGGwkvjAfp29Se2iaFD4NRS0jZHg8DUVKF4EmaHvDT5wgL7q5bBtjweKr6ygfUQmYHwlBe1jcpX4fv/1x3GIftWJNu2jshHgVypoH5ePBL9UQfRbZma+BdjBRbD4wBEuZr8R2m1zkeHPKYh+6+wnfqybp8f4sW+fj/wAhciP0Ij9EJUUPWwLX4NH6CbPsz9MntHFSLiSbfRS7IjjH8/jTxQciyvYkTpN7n/80iWq5EVcQZ7wN76LpVNoWAg3YJ7Sek8I2MIHkhd0MRSrKZE7TE25XSWqQOw0Ob2GpZwCIQH6XXspBUX0x+oi+oOVgeiP1m4PV0f0x+tbUeDXgAXjCvwbsWFUgZ9DVowp8HfMjhEFfg9aaqzA/1FbjRSEMWyttoJwxu3VUhDWwEVtBeGN3NRSEObQVWUF4Y7dVVIQ9uBlIPrR25NEwQ5f19kx0kOOHDmIAgXucZ68uYaf1LaBHnaQI0eCAgUKnKsuwv4F4ZPefSOIgyQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMTZUMTY6NDE6MDcrMDE6MDB3Kzp9AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTE2VDE2OjQxOjA3KzAxOjAwBnaCwQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	cursor: pointer;
 	position: absolute;
 	top: 10px;
 	right: 10px;
 	width: 20px;
 	height: 20px;
-	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhAxAQKQfAcebwAAAEo0lEQVR42u2dO1PjMBRGP7uAIabf7ZmhNh0Fry0Jm59Fxc+BhIpXsj1umaFftufRwHxbJAubhx3Jlq4iybdkhtx7DomDdS3dBIrBDD3kyJGDKFDgHufJm+pv2w1uoIcd5MiRoECBAufJi9kUe3zkbDxw1zU6AHCXD3O1PXLPXIJ1nvGDi+Kdp1xzCr/GU74vrO2DZ1w3kWKTI1bFFTvO8Du8qqxtxE3b+CR57UYBO7xeWlszBUr4jhQo4TdToIzvQIEyfn0FWvjCCrTw6ynQxhdUoI2vr6AWPkne2FfADm9q1aauoDa+gILa+OoKGuFbVtAIX01BY3yLChrjL1dgBN+SAiP41QqM4VtQYAy/XIFRfJK8ZWYMP+Ot0drmFRjHN6jAOP68Aq5bwDekwAr+WMHXzTLPrKQwoMAaPkme/UuyV7Lc4VyBVXzyg3vjJI/NX8uGAsv4JPnILEUPW00/p0viEAN9BcwwwKHlyrbQS5FbTgIAB7oKmGGAA4HKchkBmgrE8IE84RO+iaQChuiqrNYL4gN/UlAoleK7QBQfYIpCLBlwgMtqBcxwKYgPFLICgP0qBcxwiX3ReooU96IJxwoW3pByUxwfuAc3FnTWbMdwXgE3ORSv44EbALhb0l0TVOAE//2zuctT8eRTCpzgk6df/teWNBntxOSe3MpaxPK4mupr12o2GFHgCP+ziZN8KcAFfghfg4FfAMw9yqAaN/iZvM4IcKZAPv7DnxIQiYIp/BkBESiYwZ8TALCDPo5c12kpbnEyjb9AQMAKFuAvFBCogoX4JQICVFCCXyogMAWl+BUCAlJQgV8pAGBHYGnadtyhW44PpFW/m7ziBHeuCRrin1ThL3kHAAAz9L19F9zhZNk69FIBHitQwFcS4KkCJXxFAR4qUMRXFiDesGgWij0oLQEeKdDA1xLgiQItfE0BHijQxNcWsOIKtPFrCHDSwVOLEY71N8vVELCiCmrh1w5mTno55TE091yqqgI37awy/Kbb47xW4AZ/ZRS4w58ocNHZ+4rme0O9VuAe36kCI/hp85eIPCL/CER+EYz8a3Al8N0pWBl8NwrCuRmK/nY4+gUR7X+EmGGwkvjAfp29Se2iaFD4NRS0jZHg8DUVKF4EmaHvDT5wgL7q5bBtjweKr6ygfUQmYHwlBe1jcpX4fv/1x3GIftWJNu2jshHgVypoH5ePBL9UQfRbZma+BdjBRbD4wBEuZr8R2m1zkeHPKYh+6+wnfqybp8f4sW+fj/wAhciP0Ij9EJUUPWwLX4NH6CbPsz9MntHFSLiSbfRS7IjjH8/jTxQciyvYkTpN7n/80iWq5EVcQZ7wN76LpVNoWAg3YJ7Sek8I2MIHkhd0MRSrKZE7TE25XSWqQOw0Ob2GpZwCIQH6XXspBUX0x+oi+oOVgeiP1m4PV0f0x+tbUeDXgAXjCvwbsWFUgZ9DVowp8HfMjhEFfg9aaqzA/1FbjRSEMWyttoJwxu3VUhDWwEVtBeGN3NRSEObQVWUF4Y7dVVIQ9uBlIPrR25NEwQ5f19kx0kOOHDmIAgXucZ68uYaf1LaBHnaQI0eCAgUKnKsuwv4F4ZPefSOIgyQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMTZUMTY6NDE6MDcrMDE6MDB3Kzp9AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTE2VDE2OjQxOjA3KzAxOjAwBnaCwQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=) no-repeat center;
-	background-size: contain;
-	opacity: 0.5;
-	cursor: pointer
 }
 
 .my-friend .remove-btn:hover {
-	opacity: 1;
+	background-color: rgba(255,255,255,0.1);
 }
 
 .my-friend:hover {
@@ -386,18 +445,7 @@ html, body, #root {
 }
 
 
-.new-friend .avatar {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	height: 70px;
-	width: 70px;
-	border-radius: 50%;
-	background-color: white;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 70%;
-}
+.new-friend .avatar {}
 
 
 .new-friend .user-name {
@@ -433,17 +481,18 @@ html, body, #root {
 
 
 .new-friend .cancel-btn {
-	position: absolute;
-	border-radius: 10px;
-	right: 55px;
 	width: 40px;
 	height: 40px;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhAxAQKQfAcebwAAAEo0lEQVR42u2dO1PjMBRGP7uAIabf7ZmhNh0Fry0Jm59Fxc+BhIpXsj1umaFftufRwHxbJAubhx3Jlq4iybdkhtx7DomDdS3dBIrBDD3kyJGDKFDgHufJm+pv2w1uoIcd5MiRoECBAufJi9kUe3zkbDxw1zU6AHCXD3O1PXLPXIJ1nvGDi+Kdp1xzCr/GU74vrO2DZ1w3kWKTI1bFFTvO8Du8qqxtxE3b+CR57UYBO7xeWlszBUr4jhQo4TdToIzvQIEyfn0FWvjCCrTw6ynQxhdUoI2vr6AWPkne2FfADm9q1aauoDa+gILa+OoKGuFbVtAIX01BY3yLChrjL1dgBN+SAiP41QqM4VtQYAy/XIFRfJK8ZWYMP+Ot0drmFRjHN6jAOP68Aq5bwDekwAr+WMHXzTLPrKQwoMAaPkme/UuyV7Lc4VyBVXzyg3vjJI/NX8uGAsv4JPnILEUPW00/p0viEAN9BcwwwKHlyrbQS5FbTgIAB7oKmGGAA4HKchkBmgrE8IE84RO+iaQChuiqrNYL4gN/UlAoleK7QBQfYIpCLBlwgMtqBcxwKYgPFLICgP0qBcxwiX3ReooU96IJxwoW3pByUxwfuAc3FnTWbMdwXgE3ORSv44EbALhb0l0TVOAE//2zuctT8eRTCpzgk6df/teWNBntxOSe3MpaxPK4mupr12o2GFHgCP+ziZN8KcAFfghfg4FfAMw9yqAaN/iZvM4IcKZAPv7DnxIQiYIp/BkBESiYwZ8TALCDPo5c12kpbnEyjb9AQMAKFuAvFBCogoX4JQICVFCCXyogMAWl+BUCAlJQgV8pAGBHYGnadtyhW44PpFW/m7ziBHeuCRrin1ThL3kHAAAz9L19F9zhZNk69FIBHitQwFcS4KkCJXxFAR4qUMRXFiDesGgWij0oLQEeKdDA1xLgiQItfE0BHijQxNcWsOIKtPFrCHDSwVOLEY71N8vVELCiCmrh1w5mTno55TE091yqqgI37awy/Kbb47xW4AZ/ZRS4w58ocNHZ+4rme0O9VuAe36kCI/hp85eIPCL/CER+EYz8a3Al8N0pWBl8NwrCuRmK/nY4+gUR7X+EmGGwkvjAfp29Se2iaFD4NRS0jZHg8DUVKF4EmaHvDT5wgL7q5bBtjweKr6ygfUQmYHwlBe1jcpX4fv/1x3GIftWJNu2jshHgVypoH5ePBL9UQfRbZma+BdjBRbD4wBEuZr8R2m1zkeHPKYh+6+wnfqybp8f4sW+fj/wAhciP0Ij9EJUUPWwLX4NH6CbPsz9MntHFSLiSbfRS7IjjH8/jTxQciyvYkTpN7n/80iWq5EVcQZ7wN76LpVNoWAg3YJ7Sek8I2MIHkhd0MRSrKZE7TE25XSWqQOw0Ob2GpZwCIQH6XXspBUX0x+oi+oOVgeiP1m4PV0f0x+tbUeDXgAXjCvwbsWFUgZ9DVowp8HfMjhEFfg9aaqzA/1FbjRSEMWyttoJwxu3VUhDWwEVtBeGN3NRSEObQVWUF4Y7dVVIQ9uBlIPrR25NEwQ5f19kx0kOOHDmIAgXucZ68uYaf1LaBHnaQI0eCAgUKnKsuwv4F4ZPefSOIgyQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMTZUMTY6NDE6MDcrMDE6MDB3Kzp9AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTE2VDE2OjQxOjA3KzAxOjAwBnaCwQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=);
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: 50%;
-	background-color: rgba(0,0,0,0.1);
-	cursor: pointer
+	background-size: contain;
+	cursor: pointer;
+	position: absolute;
+	border-radius: 10px;
+	right: 55px;
+	width: 40px;
+	height: 40px;
 }
 
 
@@ -456,23 +505,7 @@ html, body, #root {
 	background-color: #608caf;
 }
 
-.info-popup {
-	position: absolute;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0,0,0, 0.8);
-}
-
-.info-popup .content {
+.info-pokemon-popup {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -496,30 +529,55 @@ html, body, #root {
 	        animation-duration: 0.4s;
 }
 
-.info-popup .content .avatar {
-	margin-top: -150px;
-	height: 300px;
+.info-pokemon-popup .avatar {
+	margin-top: -100px;
 	-ms-flex-negative: 0;
 	    flex-shrink: 0;
+	height: 300px;
 	width: 300px;
 	border-radius: 50%;
 	background-color: white;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 70%;
+	cursor: pointer;
 }
 
-.info-popup .content .name {
+.info-pokemon-popup .name {
 	margin-top: 15px;
+	width: 95%;
 	font-family: 'Open Sans', sans-serif;
-	color: white;
-	font-size: 32px;
+	font-size: 24px;
 	text-transform: uppercase;
+	background-color: transparent;
+	border: none;
+	text-align: center;
+	color: white;
 }
 
-.info-popup .content .field {
+.info-pokemon-popup .name:focus {
+	outline: none;
+}
+
+.info-pokemon-popup .name::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .name::-moz-placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .name:-ms-input-placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .name::placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .info-field {
 	width: 95%;
-	height: 100%;
+	height: 200px;
 	margin-top: 15px;
 	margin-bottom: 10px;
 	font-family: 'Open Sans', sans-serif;
@@ -527,17 +585,31 @@ html, body, #root {
 	resize: none;
 	background-color: transparent;
 	color: white;
-	border: none
+	border: none;
+	text-align: center;
 }
 
-.info-popup .content .field:focus {
+.info-pokemon-popup .info-field:focus {
 	outline: none;
 }
 
-.info-popup .content .close-btn {
-	position: absolute;
-	right: 10px;
-	top: 10px;
+.info-pokemon-popup .info-field::-webkit-input-placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .info-field::-moz-placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .info-field:-ms-input-placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .info-field::placeholder {
+	color: rgba(255,255,255,0.3);
+}
+
+.info-pokemon-popup .close-btn {
 	width: 40px;
 	height: 40px;
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAQAAABpN6lAAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfhAxAQKQfAcebwAAAEo0lEQVR42u2dO1PjMBRGP7uAIabf7ZmhNh0Fry0Jm59Fxc+BhIpXsj1umaFftufRwHxbJAubhx3Jlq4iybdkhtx7DomDdS3dBIrBDD3kyJGDKFDgHufJm+pv2w1uoIcd5MiRoECBAufJi9kUe3zkbDxw1zU6AHCXD3O1PXLPXIJ1nvGDi+Kdp1xzCr/GU74vrO2DZ1w3kWKTI1bFFTvO8Du8qqxtxE3b+CR57UYBO7xeWlszBUr4jhQo4TdToIzvQIEyfn0FWvjCCrTw6ynQxhdUoI2vr6AWPkne2FfADm9q1aauoDa+gILa+OoKGuFbVtAIX01BY3yLChrjL1dgBN+SAiP41QqM4VtQYAy/XIFRfJK8ZWYMP+Ot0drmFRjHN6jAOP68Aq5bwDekwAr+WMHXzTLPrKQwoMAaPkme/UuyV7Lc4VyBVXzyg3vjJI/NX8uGAsv4JPnILEUPW00/p0viEAN9BcwwwKHlyrbQS5FbTgIAB7oKmGGAA4HKchkBmgrE8IE84RO+iaQChuiqrNYL4gN/UlAoleK7QBQfYIpCLBlwgMtqBcxwKYgPFLICgP0qBcxwiX3ReooU96IJxwoW3pByUxwfuAc3FnTWbMdwXgE3ORSv44EbALhb0l0TVOAE//2zuctT8eRTCpzgk6df/teWNBntxOSe3MpaxPK4mupr12o2GFHgCP+ziZN8KcAFfghfg4FfAMw9yqAaN/iZvM4IcKZAPv7DnxIQiYIp/BkBESiYwZ8TALCDPo5c12kpbnEyjb9AQMAKFuAvFBCogoX4JQICVFCCXyogMAWl+BUCAlJQgV8pAGBHYGnadtyhW44PpFW/m7ziBHeuCRrin1ThL3kHAAAz9L19F9zhZNk69FIBHitQwFcS4KkCJXxFAR4qUMRXFiDesGgWij0oLQEeKdDA1xLgiQItfE0BHijQxNcWsOIKtPFrCHDSwVOLEY71N8vVELCiCmrh1w5mTno55TE091yqqgI37awy/Kbb47xW4AZ/ZRS4w58ocNHZ+4rme0O9VuAe36kCI/hp85eIPCL/CER+EYz8a3Al8N0pWBl8NwrCuRmK/nY4+gUR7X+EmGGwkvjAfp29Se2iaFD4NRS0jZHg8DUVKF4EmaHvDT5wgL7q5bBtjweKr6ygfUQmYHwlBe1jcpX4fv/1x3GIftWJNu2jshHgVypoH5ePBL9UQfRbZma+BdjBRbD4wBEuZr8R2m1zkeHPKYh+6+wnfqybp8f4sW+fj/wAhciP0Ij9EJUUPWwLX4NH6CbPsz9MntHFSLiSbfRS7IjjH8/jTxQciyvYkTpN7n/80iWq5EVcQZ7wN76LpVNoWAg3YJ7Sek8I2MIHkhd0MRSrKZE7TE25XSWqQOw0Ob2GpZwCIQH6XXspBUX0x+oi+oOVgeiP1m4PV0f0x+tbUeDXgAXjCvwbsWFUgZ9DVowp8HfMjhEFfg9aaqzA/1FbjRSEMWyttoJwxu3VUhDWwEVtBeGN3NRSEObQVWUF4Y7dVVIQ9uBlIPrR25NEwQ5f19kx0kOOHDmIAgXucZ68uYaf1LaBHnaQI0eCAgUKnKsuwv4F4ZPefSOIgyQAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDMtMTZUMTY6NDE6MDcrMDE6MDB3Kzp9AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAzLTE2VDE2OjQxOjA3KzAxOjAwBnaCwQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAASUVORK5CYII=);
@@ -545,6 +617,15 @@ html, body, #root {
 	background-repeat: no-repeat;
 	background-size: contain;
 	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 40px;
+	height: 40px;
+}
+
+.info-pokemon-popup .close-btn:hover {
+	background-color: rgba(255,255,255,0.1);
 }
 
 @-webkit-keyframes show {

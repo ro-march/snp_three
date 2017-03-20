@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import { users } from '../../constants/Users'
 import { POPUP_CREATE_POKEMON } from '../../constants/Events';
 
 
 export default class CreatePokemonPopup extends Component {
+
+	static contextTypes = {
+		actions: PropTypes.object.isRequired,
+	}
 
 	constructor(props) {
 		super(props);
@@ -11,15 +15,14 @@ export default class CreatePokemonPopup extends Component {
 	}
 
 	onCloseHandler() {
-		this.props.actions.hidePopup(POPUP_CREATE_POKEMON);
+		this.context.actions.hidePopup(POPUP_CREATE_POKEMON);
 	}
 
 	onCreatePokemon() {
 		if (this.state.avatar !== './public/icons/reload.png' &&
 			this.state.name !== '')
 		{
-			console.log(this.state);
-			this.props.actions.createPokemon(this.state);
+			this.context.actions.createPokemon(this.state);
 			this.onCloseHandler();
 		}
 	}

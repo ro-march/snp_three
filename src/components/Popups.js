@@ -1,24 +1,27 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 import CreatePokemonPopup from './popups/CreatePokemonPopup'
+import InfoPokemonPopup from './popups/InfoPokemonPopup'
 
 
 export default class Popups extends Component {
-	
+
+	static contextTypes = {
+		actions: PropTypes.object.isRequired,
+		popups: PropTypes.array.isRequired,
+	}
+
+
 	render() {
-		const { popups, userActions, changePokemon } = this.props.data;
-		const popupList = []
+		const { popups } = this.context
+		const list = []
 
-		if (popups.popupCreatePokemon.show)
-			popupList.push( <CreatePokemonPopup key='1' actions={userActions}/> )
+		for (let i = 0; i < popups.length; i++)
+			if (popups[i].isShow)
+				list.push( React.createElement(popups[i].component, {key: i, popup: popups[i]}) )
 
-		if (popups.popupInfoPokemon.show)
-			popupList.push( <InfoPokemonPopup key='1' actions={userActions} pokemon={changePokemon}/> )
+		if (list.length < 1)
+			return null
 
-		if (popupList.length < 1)
-			return null;
-
-		return (
-			<div className="popup-container">{popupList}</div>
-		);
+		return <div className="popup-container">{list}</div>
 	}
 }

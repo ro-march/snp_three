@@ -1,12 +1,14 @@
 import {
 	ADD_NEW_FRIEND,
 	CHANGE_POKEMON,
-	REMOVE_FRIEND
+	REMOVE_POKEMON,
+	CREATE_POKEMON,
 } from '../constants/Events'
 import ReactDOM from 'react-dom'
+import users from '../constants/Users'
 
 
-export default function new_pokemons(state = [], action) {
+export function new_pokemons(state = [], action) {
 
 	switch( action.type ) {
 
@@ -23,39 +25,27 @@ export default function new_pokemons(state = [], action) {
 }
 
 
-export default function my_pokemons(state = [], action) {
+export function my_pokemons(state = [], action) {
 
 	switch( action.type ) {
 
 		case ADD_NEW_FRIEND:
 			return [...state, action.payload];
 
-		case REMOVE_FRIEND:
+		case REMOVE_POKEMON:
 			let id = action.payload.id;
 			return state.filter(item => item.id !== id);
-
-		default:
-			return state;
-	}
-}
-
-export default function change_pokemon(state = {}, action) {
-
-	switch( action.type ) {
 
 		case CHANGE_POKEMON:
 			for (let i = 0; i < state.length; i++) {
 				if (state[i].id == action.payload.id) {
-					var clone = Object.assign({}, state[i]);
 
-					clone.avatar = action.payload.avatar;
-					clone.name = action.payload.name;
-					clone.info = action.payload.info;
-
-					state[i] = clone;
+					let {name, info, avatar} = action.payload;
+					state[i] = {...state[i], name: name, info: info, avatar: avatar}
 				}
 			}
 			return [...state];
+
 
 		default:
 			return state;
