@@ -1,12 +1,15 @@
 import { combineReducers } from 'redux'
-
-import requestList from './requestList'
-import friendsList from './friendsList'
-import PopupInfoReducer from './PopupInfoReducer'
-
+import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import popups from './popups'
+import {
+	my_pokemons,
+	new_pokemons,
+} from './pokemons'
 
 export default combineReducers ({
-	requestList,
-	friendsList,
-	PopupInfoReducer
+	popups,
+	my_pokemons,
+	new_pokemons,
+	routing: routerReducer,
 })

@@ -1,34 +1,68 @@
-import React, { Component } from 'react'
+import React, { PropTypes, Component } from 'react'
 import { bindActionCreators } from 'redux'
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 import { connect } from 'react-redux'
-
-import RequestList from '../components/RequestList'
-import FriendList from '../components/FriendList'
-import Info from '../components/Info'
-
 import * as userActions from '../actions/UserActions'
+import * as popups from '../reducers/popups'
+import {POPUP_CREATE_POKEMON, POPUP_INFO_POKEMON} from '../constants/Events'
+
+import CreatePokemonPopup from '../components/popups/CreatePokemonPopup'
+import NewPokemonsList from '../components/lists/NewPokemonsList'
+import MyPokemonsList from '../components/lists/MyPokemonsList'
+import ViewPokemon from '../components/elements/ViewPokemon'
+import Popups from '../components/Popups'
 
 
 export class App extends Component {
-	render() {
-		const { removeFriend, changeInfo, showInfo, closeInfo, addNewFriend, CancelNewFriend } = this.props.userActions;
-		const { requestList, friendsList, info } = this.props;
-		return (
-			<div className="container">
-				<RequestList requestList={requestList} addNewFriend={addNewFriend}/>
-				<FriendList friendsList={friendsList} onShowInfo={showInfo} onRemoveFriend={removeFriend}/>
-				<Info info={info} onCloseInfo={closeInfo} changeInfo={changeInfo}/>
-			</div>
-		);
+
+
+	componentWillMount() {
+		popups.regPopup(POPUP_CREATE_POKEMON, CreatePokemonPopup);
 	}
+
+
+	render() {
+		return (
+		<Router>
+			<div className="container">
+				<NewPokemonsList />
+				<Switch>
+					<Route exact path="/" component={MyPokemonsList} />
+					<Route path="/items/:routeId" component={ViewPokemon} />
+				</Switch>
+				<Popups />
+			</div>
+		</Router>
+		)
+	}
+
+
+	//** inject **//
+	getChildContext() {
+    	return {
+    		actions: this.props.userActions,
+    		popups: this.props.popups,
+    		new_pokemons: this.props.new_pokemons,
+    		my_pokemons: this.props.my_pokemons,
+    	};
+  	}
+}
+
+
+//** types dependency **//
+App.childContextTypes = {
+	actions: React.PropTypes.object,
+	popups: React.PropTypes.array,
+	new_pokemons: React.PropTypes.array,
+	my_pokemons: React.PropTypes.array,
 }
 
 
 function mapStateToProps (state) {
 	return {
-		requestList: state.requestList,
-		friendsList: state.friendsList,
-		info: state.PopupInfoReducer
+		popups: state.popups,
+		new_pokemons: state.new_pokemons,
+		my_pokemons: state.my_pokemons,
 	}
 }
 

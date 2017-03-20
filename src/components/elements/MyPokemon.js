@@ -1,18 +1,28 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
+import { POPUP_INFO_POKEMON } from '../../constants/Events'
 
-export default class MyFriend extends Component {
+
+export default class MyPokemon extends Component {
+
+	
+	static contextTypes = {
+		actions: PropTypes.object.isRequired,
+	}
+
 
 	onClickAvatar() {
-		this.props.onShowInfo( this.props );
+		this.props.history.push('/items/'+this.props.id);
 	}
 
+
 	onRemoveHandler() {
-		this.props.onRemoveFriend(this.props);
+		this.context.actions.removePokemon(this.props.pokemon);
 	}
+	
 
 	render() {
 
-		const { avatar, name, onShowInfo, onRemoveFriend } = this.props;
+		var { avatar, name } = this.props.pokemon;
 
 		const avatarStyle = {
 		  backgroundImage: 'url('+ avatar +')'

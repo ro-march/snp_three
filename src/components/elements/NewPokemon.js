@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 
-export default class NewFriend extends Component {
+
+export default class NewPokemon extends Component {
+
+	//** injection **//
+	static contextTypes = {
+		actions: PropTypes.object.isRequired
+	}
+
 
 	onAddHandler () {
-		this.props.addNewFriend(this.props);
+		this.context.actions.addPokemon(this.props.pokemon);
 	}
-    	
+
+
 	render() {
-		const { avatar, name } = this.props;
+		const { avatar, name } = this.props.pokemon;
 
 		const avatarStyle = {
 		  backgroundImage: 'url(' + avatar + ')'
@@ -18,7 +26,6 @@ export default class NewFriend extends Component {
 				<div className="avatar" style={avatarStyle}></div>
 				<div className="user-name">{name}</div>
 				<div className="add-btn" onClick={::this.onAddHandler}></div>
-				
 			</div>
 		);
 	}

@@ -1,33 +1,73 @@
 import {
-	ADD_NEW_FRIEND,
-	CANCEL_NEW_FRIEND,
-	REMOVE_FRIEND,
-	SHOW_INFO,
-	CLOSE_INFO,
-	CHANGE_INFO
+	ADD_POKEMON,
+	REMOVE_POKEMON,
+	CHANGE_POKEMON,
+	CREATE_POKEMON,
+	SHOW_POPUP,
+	HIDE_POPUP
 } from '../constants/Events'
 
 
- //*** ***//
-export function addNewFriend(friend) {
+export function showPopup( name, arg = null ) {
 	return (dispatch) =>
 	{
 		dispatch({
-			type: ADD_NEW_FRIEND,
-			payload: friend
+			type: SHOW_POPUP,
+			payload: {
+				name: name,
+				arg: arg
+			}
 		})
 	}
 }
 
-export function removeFriend(friend) {
+
+export function hidePopup( name, arg = null ) {
 	return (dispatch) =>
 	{
 		dispatch({
-			type: REMOVE_FRIEND,
-			payload: friend
+			type: HIDE_POPUP,
+			payload: {
+				name: name,
+				arg: arg
+			}
 		})
 	}
 }
+
+
+export function createPokemon(pokemon) {
+	return (dispatch) =>
+	{
+		dispatch({
+			type: CREATE_POKEMON,
+			payload: pokemon
+		})
+	}
+}
+
+
+export function addPokemon(pokemon) {
+	return (dispatch) =>
+	{
+		dispatch({
+			type: ADD_POKEMON,
+			payload: pokemon
+		})
+	}
+}
+
+
+export function removePokemon(pokemon) {
+	return (dispatch) =>
+	{
+		dispatch({
+			type: REMOVE_POKEMON,
+			payload: pokemon
+		})
+	}
+}
+
 
 export function cancelNewFriend(friend) {
 	return (dispatch) =>
@@ -39,34 +79,13 @@ export function cancelNewFriend(friend) {
 	}
 }
 
- //*** ***//
-export function changeInfo(id, info) {
-	return (dispatch) =>
-	{
-		dispatch({
-			type: CHANGE_INFO,
-			payload: {id: id, info: info}
-		})
-	}
-}
 
- //*** ***//
-export function showInfo(friend) {
+export function changePokemon(pokemon) {
 	return (dispatch) =>
 	{
 		dispatch({
-			type: SHOW_INFO,
-			payload: friend
-		})
-	}
-}
-
-export function closeInfo(friend) {
-	return (dispatch) =>
-	{
-		dispatch({
-			type: CLOSE_INFO,
-			payload: {}
+			type: CHANGE_POKEMON,
+			payload: pokemon
 		})
 	}
 }
